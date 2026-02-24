@@ -1,0 +1,20 @@
+{
+  "backend/main.mo": "Empty Motoko actor serving as the backend entry point with no implemented functionality.",
+  "feature_evidence.json": "Feature evidence report confirming the phone number update to '+91 70069 81592' in ContactSection.tsx, with high confidence and linked to test REQ-9.",
+  "frontend-file-summaries.txt": "JSON document containing one-line summaries of all frontend source files describing their purpose and key design details.",
+  "frontend/index.css": "Base Tailwind CSS file defining OKLCH-based CSS custom properties for light and dark theme color tokens including background, foreground, primary, and sidebar variables.",
+  "frontend/index.html": "HTML entry point for the Jay Sports React app, mounting the app into a root div and loading the main TypeScript module.",
+  "frontend/src/App.tsx": "Root React component that renders only the Home page component.",
+  "frontend/src/components/AboutSection.tsx": "About section component displaying Jay Sports brand story, an animated stats grid, and a four-column core values grid with Lucide icons.",
+  "frontend/src/components/ContactSection.tsx": "Contact section with Indian address, phone number '+91 70069 81592', email, hours, and a validated contact form with success state handling.",
+  "frontend/src/components/Navigation.tsx": "Fixed navigation bar with logo, smooth-scroll section links, active section highlighting on scroll, and a responsive mobile hamburger menu.",
+  "frontend/src/components/ProductCard.tsx": "Product card component showing an image with hover overlay cart button, optional badge, category label, name, and price.",
+  "frontend/src/components/ProductShowcase.tsx": "Product showcase section rendering a 3-column grid of six ProductCard components with Indian Rupee prices ranging from ₹999 to ₹10,999.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and caches an ICP backend actor using React Query, returning either an authenticated or anonymous actor based on the current Internet Identity, and invalidating dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an InternetIdentityProvider context and useInternetIdentity hook for managing ICP Internet Identity authentication, including login, logout, and identity persistence via AuthClient.",
+  "frontend/src/index.css": "Global CSS file that imports Google Fonts (Barlow/Barlow Condensed), sets up Tailwind directives, and defines a dark athletic theme with CSS custom properties, utility classes, and component styles for the Jay Sports brand.",
+  "frontend/src/main.tsx": "Application entry point that renders the React app wrapped with QueryClientProvider and InternetIdentityProvider into the DOM root.",
+  "frontend/src/pages/Home.tsx": "Home page component that composes the full-page layout including a hero section with background image, headline, and CTAs, alongside Navigation, ProductShowcase, AboutSection, and ContactSection components.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the default theme with Jay Sports brand colors (oklch-based), custom fonts (Barlow/Barlow Condensed), border radii, shadows, and animation keyframes, with typography, container-queries, and animate plugins.",
+  "project_state.json": "Project state metadata file tracking the current version, feature list, architectural notes, and known issues for the Jay Sports retail website build."
+}

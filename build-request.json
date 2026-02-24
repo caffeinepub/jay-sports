@@ -1,0 +1,40 @@
+{
+  "kind": "build_request",
+  "title": "Add contact phone number to ContactSection",
+  "projectName": "Jay Sports",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "text": "In the ContactSection component, update the displayed phone number to '7006981592' (formatted as +91 70069 81592 or similar Indian mobile format). Replace any existing placeholder phone number with this real contact number.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Add my contact number 7006981592"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The ContactSection displays the phone number 7006981592",
+        "The number is formatted in a standard Indian mobile format (e.g., +91 70069 81592)",
+        "The phone number replaces any previously displayed placeholder phone number",
+        "The phone detail entry retains the same visual style as other contact details"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change any other contact details (address, email, form fields)",
+    "Do not modify any files listed in frontend.immutablePaths"
+  ],
+  "nonGoals": [
+    "Adding a clickable tel: link unless it fits the existing design pattern",
+    "Changing any other section of the site",
+    "Adding shopping cart or e-commerce functionality"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
