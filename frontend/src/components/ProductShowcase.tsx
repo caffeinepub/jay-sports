@@ -1,82 +1,68 @@
-import ProductCard from './ProductCard';
+import ProductCard from "./ProductCard";
 
 const products = [
-    {
-        image: '/assets/generated/product-shoes.dim_400x400.png',
-        name: 'Pro Runner X1',
-        price: '₹10,999',
-        category: 'Footwear',
-        badge: 'New',
-    },
-    {
-        image: '/assets/generated/product-jersey.dim_400x400.png',
-        name: 'Elite Match Jersey',
-        price: '₹4,999',
-        category: 'Tops',
-        badge: 'Hot',
-    },
-    {
-        image: '/assets/generated/product-shorts.dim_400x400.png',
-        name: 'Speed Flex Shorts',
-        price: '₹3,499',
-        category: 'Bottoms',
-    },
-    {
-        image: '/assets/generated/product-hoodie.dim_400x400.png',
-        name: 'Thermal Training Hoodie',
-        price: '₹7,499',
-        category: 'Outerwear',
-        badge: 'Sale',
-    },
-    {
-        image: '/assets/generated/product-cap.dim_400x400.png',
-        name: 'Performance Cap',
-        price: '₹2,499',
-        category: 'Accessories',
-    },
-    {
-        image: '/assets/generated/product-socks.dim_400x400.png',
-        name: 'Grip Pro Socks',
-        price: '₹999',
-        category: 'Accessories',
-    },
+  {
+    image: "/assets/generated/product-jersey.dim_400x400.png",
+    category: "Apparel",
+    name: "Pro Athletic Jersey",
+    price: "₹1,299",
+    badge: "Best Seller",
+  },
+  {
+    image: "/assets/generated/product-shorts.dim_400x400.png",
+    category: "Apparel",
+    name: "Performance Shorts",
+    price: "₹999",
+  },
+  {
+    image: "/assets/generated/product-hoodie.dim_400x400.png",
+    category: "Apparel",
+    name: "Champion Hoodie",
+    price: "₹2,499",
+    badge: "New",
+  },
+  {
+    image: "/assets/generated/product-shoes.dim_400x400.png",
+    category: "Footwear",
+    name: "Speed Boost Shoes",
+    price: "₹10,999",
+    badge: "Premium",
+  },
+  {
+    image: "/assets/generated/product-cap.dim_400x400.png",
+    category: "Accessories",
+    name: "Athletic Cap",
+    price: "₹699",
+  },
+  {
+    image: "/assets/generated/product-socks.dim_400x400.png",
+    category: "Accessories",
+    name: "Pro Grip Socks",
+    price: "₹349",
+  },
 ];
 
 export default function ProductShowcase() {
-    return (
-        <section id="products" className="section-divider py-20 lg:py-28 bg-background">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
-                <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                    <div>
-                        <p className="text-brand-red font-semibold tracking-widest uppercase text-sm mb-2">
-                            — Our Collection
-                        </p>
-                        <h2 className="font-heading text-5xl lg:text-6xl font-900 text-foreground leading-none">
-                            Featured
-                            <br />
-                            <span className="text-stroke">Products</span>
-                        </h2>
-                    </div>
-                    <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">
-                        Engineered for peak performance. Designed for champions. Every piece built to push your limits.
-                    </p>
-                </div>
-
-                {/* Product Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {products.map((product) => (
-                        <ProductCard key={product.name} {...product} />
-                    ))}
-                </div>
-
-                {/* View All CTA */}
-                <div className="mt-12 text-center">
-                    <button className="btn-outline">
-                        View All Products
-                    </button>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section id="products" className="py-20 bg-brand-dark">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-14">
+          <span className="text-brand-red font-heading font-bold uppercase tracking-widest text-sm">
+            Our Collection
+          </span>
+          <h2 className="font-heading text-4xl md:text-5xl font-black text-white uppercase mt-2 mb-4">
+            Premium Gear
+          </h2>
+          <p className="text-brand-gray max-w-xl mx-auto font-body">
+            Engineered for performance. Designed for champions. Explore our full range of athletic equipment and apparel.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map((product) => (
+            <ProductCard key={product.name} {...product} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

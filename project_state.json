@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
+  "projectStateVersion": 15,
   "summary": "A modern retail website for Jay Sports, a sportswear store. Features a homepage with hero section, product showcase, about section, and contact info with a bold, athletic design.",
   "architectural_notes": [
     "Bold, athletic visual design theme suited for a sportswear brand"
@@ -79,6 +79,38 @@
         "REQ-9"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-in-the-contactsection-component-update-the-displayed-email-address-to-jaysports-in-gmail-com-replace-any-existing-placeholder-email-with-this-real-contact-email-address",
+      "title": "In the ContactSection component, update the displayed email address to 'jaysports.in@gmail.com'. Replace any existing placeholder email with this real contact email address.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-contactsection-component-update-the-displayed-address-to-196-new-colony-ratnipora-pulwama-192304-jammu-and-kashmir-replace-any-existing-address-text-with-this-new-address",
+      "title": "In the ContactSection component, update the displayed address to '196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir'. Replace any existing address text with this new address.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-save-the-uploaded-jay-sports-logo-image-1771937030584-png-as-a-static-asset-at-frontend-public-assets-generated-jay-sports-logo-png-and-use-it-as-the-logo-image-in-the-navigation-component-replacing-the-current-text-only-or-placeholder-logo-the-logo-should-be-displayed-at-an-appropriate-height-e-g-48px-within-the-sticky-navbar-maintaining-its-aspect-ratio",
+      "title": "Save the uploaded Jay Sports logo image (1771937030584.png) as a static asset at frontend/public/assets/generated/jay-sports-logo.png and use it as the logo image in the Navigation component, replacing the current text-only or placeholder logo. The logo should be displayed at an appropriate height (e.g., 48px) within the sticky navbar, maintaining its aspect ratio.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-application-is-fully-built-and-deployed-with-all-existing-features-intact-including-the-homepage-hero-section-product-showcase-with-inr-prices-about-section-contact-section-with-real-address-phone-email-sticky-navigation-with-the-jay-sports-logo-image-and-the-bold-athletic-visual-theme",
+      "title": "Ensure the application is fully built and deployed with all existing features intact, including the homepage hero section, product showcase with INR prices, about section, contact section with real address/phone/email, sticky navigation with the Jay Sports logo image, and the bold athletic visual theme.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -107,12 +139,6 @@
       "status": "pending"
     },
     {
-      "id": "AR-5",
-      "summary": "Add user's current address to contact section",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
       "id": "AR-6",
       "summary": "Change product prices to Indian Rupees (₹)",
       "reqIds": [],
@@ -121,6 +147,30 @@
     {
       "id": "AR-7",
       "summary": "Add contact phone number 7006981592 to the contact section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add contact form so customers can reach out directly from the website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add email address jaysports.in@gmail.com to the contact section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Update contact address to: 196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add a custom logo image to the Jay Sports brand/navigation",
       "reqIds": [],
       "status": "pending"
     }

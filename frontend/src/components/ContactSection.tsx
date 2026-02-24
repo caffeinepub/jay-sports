@@ -1,222 +1,177 @@
-import { useState } from 'react';
-import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react';
-
-interface FormState {
-    name: string;
-    email: string;
-    message: string;
-}
-
-const contactDetails = [
-    {
-        icon: MapPin,
-        label: 'Address',
-        value: '12, MG Road, Bengaluru, Karnataka 560001, India',
-    },
-    {
-        icon: Phone,
-        label: 'Phone',
-        value: '+91 70069 81592',
-    },
-    {
-        icon: Mail,
-        label: 'Email',
-        value: 'hello@jaysports.com',
-    },
-    {
-        icon: Clock,
-        label: 'Hours',
-        value: 'Mon–Sat: 9AM – 8PM',
-    },
-];
+import { useState } from "react";
+import { MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react";
 
 export default function ContactSection() {
-    const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' });
-    const [errors, setErrors] = useState<Partial<FormState>>({});
-    const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
 
-    const validate = (): boolean => {
-        const newErrors: Partial<FormState> = {};
-        if (!form.name.trim()) newErrors.name = 'Name is required.';
-        if (!form.email.trim()) {
-            newErrors.email = 'Email is required.';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-            newErrors.email = 'Enter a valid email address.';
-        }
-        if (!form.message.trim()) newErrors.message = 'Message is required.';
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
+  const validate = () => {
+    const newErrors: typeof errors = {};
+    if (!form.name.trim()) newErrors.name = "Name is required.";
+    if (!form.email.trim()) newErrors.email = "Email is required.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Enter a valid email.";
+    if (!form.message.trim()) newErrors.message = "Message is required.";
+    return newErrors;
+  };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!validate()) return;
-        setSubmitted(true);
-        setForm({ name: '', email: '', message: '' });
-        setErrors({});
-    };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      return;
+    }
+    setErrors({});
+    setSubmitted(true);
+  };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setForm((prev) => ({ ...prev, [name]: value }));
-        if (errors[name as keyof FormState]) {
-            setErrors((prev) => ({ ...prev, [name]: undefined }));
-        }
-    };
+  return (
+    <section id="contact" className="py-20 bg-brand-dark">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-14">
+          <span className="text-brand-red font-heading font-bold uppercase tracking-widest text-sm">
+            Get In Touch
+          </span>
+          <h2 className="font-heading text-4xl md:text-5xl font-black text-white uppercase mt-2 mb-4">
+            Contact Us
+          </h2>
+          <p className="text-brand-gray max-w-xl mx-auto font-body">
+            Have questions about our products or want to place a bulk order? We'd love to hear from you.
+          </p>
+        </div>
 
-    return (
-        <section id="contact" className="section-divider py-20 lg:py-28 bg-background">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <div className="mb-14 text-center">
-                    <p className="text-brand-red font-semibold tracking-widest uppercase text-sm mb-2">
-                        — Get In Touch
-                    </p>
-                    <h2 className="font-heading text-5xl lg:text-6xl font-900 text-foreground leading-none">
-                        Contact <span className="text-brand-red">Us</span>
-                    </h2>
-                </div>
-
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-                    {/* Contact Info */}
-                    <div>
-                        <p className="text-muted-foreground leading-relaxed mb-8">
-                            Have a question about our products, sizing, or orders? Our team is ready to help you gear up for greatness. Reach out and we'll get back to you within 24 hours.
-                        </p>
-
-                        <div className="space-y-5">
-                            {contactDetails.map((detail) => {
-                                const Icon = detail.icon;
-                                return (
-                                    <div key={detail.label} className="flex items-start gap-4">
-                                        <div
-                                            className="w-10 h-10 flex items-center justify-center flex-shrink-0 text-primary-foreground"
-                                            style={{
-                                                background: 'oklch(0.58 0.22 25)',
-                                                clipPath: 'polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%)',
-                                            }}
-                                        >
-                                            <Icon size={16} />
-                                        </div>
-                                        <div>
-                                            <p className="text-xs font-semibold tracking-widest uppercase text-brand-red mb-0.5">
-                                                {detail.label}
-                                            </p>
-                                            <p className="text-foreground text-sm">{detail.value}</p>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        {/* Decorative bar */}
-                        <div className="mt-10 h-1 w-full" style={{ background: 'linear-gradient(90deg, oklch(0.58 0.22 25), transparent)' }} />
-                    </div>
-
-                    {/* Contact Form */}
-                    <div
-                        className="p-8 border border-brand-dark-border"
-                        style={{ background: 'oklch(0.17 0.008 260)' }}
-                    >
-                        {submitted ? (
-                            <div className="flex flex-col items-center justify-center h-full py-12 text-center">
-                                <div
-                                    className="w-16 h-16 flex items-center justify-center mb-4 text-primary-foreground"
-                                    style={{
-                                        background: 'oklch(0.58 0.22 25)',
-                                        clipPath: 'polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)',
-                                    }}
-                                >
-                                    <Send size={24} />
-                                </div>
-                                <h3 className="font-heading font-800 text-2xl uppercase tracking-wide text-foreground mb-2">
-                                    Message Sent!
-                                </h3>
-                                <p className="text-muted-foreground text-sm mb-6">
-                                    Thanks for reaching out. We'll get back to you within 24 hours.
-                                </p>
-                                <button
-                                    onClick={() => setSubmitted(false)}
-                                    className="btn-outline text-xs"
-                                >
-                                    Send Another
-                                </button>
-                            </div>
-                        ) : (
-                            <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                                <h3 className="font-heading font-800 text-xl uppercase tracking-wide text-foreground mb-6">
-                                    Send a Message
-                                </h3>
-
-                                {/* Name */}
-                                <div>
-                                    <label className="block text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2">
-                                        Full Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={form.name}
-                                        onChange={handleChange}
-                                        placeholder="Your full name"
-                                        className={`w-full px-4 py-3 bg-background border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:border-brand-red transition-colors ${
-                                            errors.name ? 'border-destructive' : 'border-brand-dark-border'
-                                        }`}
-                                    />
-                                    {errors.name && (
-                                        <p className="mt-1 text-xs text-destructive">{errors.name}</p>
-                                    )}
-                                </div>
-
-                                {/* Email */}
-                                <div>
-                                    <label className="block text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2">
-                                        Email Address
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={form.email}
-                                        onChange={handleChange}
-                                        placeholder="your@email.com"
-                                        className={`w-full px-4 py-3 bg-background border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:border-brand-red transition-colors ${
-                                            errors.email ? 'border-destructive' : 'border-brand-dark-border'
-                                        }`}
-                                    />
-                                    {errors.email && (
-                                        <p className="mt-1 text-xs text-destructive">{errors.email}</p>
-                                    )}
-                                </div>
-
-                                {/* Message */}
-                                <div>
-                                    <label className="block text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2">
-                                        Message
-                                    </label>
-                                    <textarea
-                                        name="message"
-                                        value={form.message}
-                                        onChange={handleChange}
-                                        placeholder="Tell us how we can help..."
-                                        rows={5}
-                                        className={`w-full px-4 py-3 bg-background border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:border-brand-red transition-colors resize-none ${
-                                            errors.message ? 'border-destructive' : 'border-brand-dark-border'
-                                        }`}
-                                    />
-                                    {errors.message && (
-                                        <p className="mt-1 text-xs text-destructive">{errors.message}</p>
-                                    )}
-                                </div>
-
-                                <button type="submit" className="btn-primary w-full justify-center">
-                                    <Send size={14} />
-                                    Send Message
-                                </button>
-                            </form>
-                        )}
-                    </div>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-brand-red/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <MapPin className="w-5 h-5 text-brand-red" />
+              </div>
+              <div>
+                <h4 className="font-heading text-white font-bold uppercase mb-1">Address</h4>
+                <p className="text-brand-gray font-body text-sm leading-relaxed">
+                  196 - New Colony Ratnipora<br />
+                  Pulwama, 192304<br />
+                  Jammu and Kashmir
+                </p>
+              </div>
             </div>
-        </section>
-    );
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-brand-red/20 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-5 h-5 text-brand-red" />
+              </div>
+              <div>
+                <h4 className="font-heading text-white font-bold uppercase mb-1">Phone</h4>
+                <a
+                  href="tel:+917006981592"
+                  className="text-brand-gray hover:text-brand-red transition-colors font-body text-sm"
+                >
+                  +91 70069 81592
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-brand-red/20 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-5 h-5 text-brand-red" />
+              </div>
+              <div>
+                <h4 className="font-heading text-white font-bold uppercase mb-1">Email</h4>
+                <a
+                  href="mailto:jaysports.in@gmail.com"
+                  className="text-brand-gray hover:text-brand-red transition-colors font-body text-sm"
+                >
+                  jaysports.in@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-brand-red/20 flex items-center justify-center flex-shrink-0">
+                <Clock className="w-5 h-5 text-brand-red" />
+              </div>
+              <div>
+                <h4 className="font-heading text-white font-bold uppercase mb-1">Hours</h4>
+                <p className="text-brand-gray font-body text-sm">
+                  Mon – Sat: 9:00 AM – 7:00 PM<br />
+                  Sunday: 10:00 AM – 4:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-brand-dark-card border border-brand-dark-border rounded-lg p-8">
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center h-full text-center py-8">
+                <CheckCircle className="w-16 h-16 text-brand-red mb-4" />
+                <h3 className="font-heading text-white font-black text-2xl uppercase mb-2">
+                  Message Sent!
+                </h3>
+                <p className="text-brand-gray font-body">
+                  Thank you for reaching out. We'll get back to you within 24 hours.
+                </p>
+                <button
+                  onClick={() => { setSubmitted(false); setForm({ name: "", email: "", message: "" }); }}
+                  className="mt-6 cta-secondary px-6 py-3 text-sm font-bold uppercase tracking-wider"
+                >
+                  Send Another
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                <div>
+                  <label className="block text-white font-heading font-bold uppercase text-xs tracking-wider mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    placeholder="Your full name"
+                    className="w-full bg-brand-dark border border-brand-dark-border rounded px-4 py-3 text-white placeholder-brand-gray/50 font-body text-sm focus:outline-none focus:border-brand-red transition-colors"
+                  />
+                  {errors.name && <p className="text-brand-red text-xs mt-1">{errors.name}</p>}
+                </div>
+                <div>
+                  <label className="block text-white font-heading font-bold uppercase text-xs tracking-wider mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    placeholder="your@email.com"
+                    className="w-full bg-brand-dark border border-brand-dark-border rounded px-4 py-3 text-white placeholder-brand-gray/50 font-body text-sm focus:outline-none focus:border-brand-red transition-colors"
+                  />
+                  {errors.email && <p className="text-brand-red text-xs mt-1">{errors.email}</p>}
+                </div>
+                <div>
+                  <label className="block text-white font-heading font-bold uppercase text-xs tracking-wider mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    placeholder="How can we help you?"
+                    rows={5}
+                    className="w-full bg-brand-dark border border-brand-dark-border rounded px-4 py-3 text-white placeholder-brand-gray/50 font-body text-sm focus:outline-none focus:border-brand-red transition-colors resize-none"
+                  />
+                  {errors.message && <p className="text-brand-red text-xs mt-1">{errors.message}</p>}
+                </div>
+                <button
+                  type="submit"
+                  className="w-full cta-primary py-4 font-bold uppercase tracking-wider text-sm"
+                >
+                  Send Message
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

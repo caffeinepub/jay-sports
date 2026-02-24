@@ -1,22 +1,54 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add contact phone number to ContactSection",
+  "title": "Deploy Jay Sports Website (Frontend)",
   "requirements": [
     {
-      "id": "REQ-9",
-      "summary": "Update ContactSection phone number to 7006981592 with Indian mobile formatting",
+      "id": "REQ-13",
+      "summary": "Ensure the frontend application is fully built and deployed with all existing features intact, including homepage hero, product showcase with INR prices, about section, contact section with real details, sticky navigation with logo, and bold athletic theme",
       "acceptanceCriteria": [
-        "The ContactSection displays the phone number 7006981592",
-        "The number is formatted in a standard Indian mobile format (e.g., +91 70069 81592)",
-        "The phone number replaces any previously displayed placeholder phone number",
-        "The phone detail entry retains the same visual style as other contact details"
+        "The application deploys successfully without build or deployment errors",
+        "All sections (Hero, Products, About, Contact) are visible and functional on the live deployment",
+        "The Jay Sports logo image is displayed in the navigation bar",
+        "Product prices are shown in Indian Rupees (₹)",
+        "Contact section displays the correct address (196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir), phone (+91 70069 81592), and email (jaysports.in@gmail.com)",
+        "The dark athletic theme with electric red accents is applied consistently across all sections"
       ],
       "file_operations": [
         {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Verify the Jay Sports logo image path references the generated logo at frontend/public/assets/generated/jay-sports-logo.dim_256x256.png and ensure the navigation bar renders correctly with sticky positioning and smooth scroll behavior"
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Verify the hero section uses the generated hero banner at frontend/public/assets/generated/hero-banner.dim_1440x600.png and ensure all page sections (Navigation, Hero, ProductShowcase, AboutSection, ContactSection) are properly composed and render in the correct order"
+        },
+        {
+          "path": "frontend/src/components/ProductShowcase.tsx",
+          "operation": "modify",
+          "description": "Verify all product images reference the generated assets (frontend/public/assets/generated/product-jersey.dim_400x400.png, product-shorts.dim_400x400.png, product-hoodie.dim_400x400.png, product-shoes.dim_400x400.png, product-cap.dim_400x400.png, product-socks.dim_400x400.png) and ensure prices are displayed in Indian Rupees with the ₹ symbol"
+        },
+        {
           "path": "frontend/src/components/ContactSection.tsx",
           "operation": "modify",
-          "description": "Update the phone number display in the contact details section to show '7006981592' formatted as '+91 70069 81592'. Locate the existing phone number element (likely marked with a phone icon or 'Phone' label) and replace its content with the new formatted number. Ensure the visual styling and layout remain consistent with the existing contact detail entries for address and email."
+          "description": "Verify the contact section displays the correct address (196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir), phone (+91 70069 81592), and email (jaysports.in@gmail.com), and ensure the contact form validation and success state work properly"
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Verify the dark athletic theme with electric red accents is properly defined using CSS custom properties and ensure the Barlow font family imports are loading correctly"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Verify the Tailwind configuration includes the dark athletic color palette using oklch values, custom fonts (Barlow/Barlow Condensed), and animation keyframes for the athletic theme"
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Verify the HTML shell includes the correct page title (Jay Sports), meta tags for SEO, and the root div element where the React app mounts"
         }
       ]
     }

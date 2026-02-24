@@ -1,66 +1,36 @@
-import { ShoppingBag } from 'lucide-react';
-
 interface ProductCardProps {
-    image: string;
-    name: string;
-    price: string;
-    category: string;
-    badge?: string;
+  image: string;
+  category: string;
+  name: string;
+  price: string;
+  badge?: string;
 }
 
-export default function ProductCard({ image, name, price, category, badge }: ProductCardProps) {
-    return (
-        <div className="product-card group cursor-pointer">
-            {/* Image Container */}
-            <div className="relative aspect-square overflow-hidden bg-brand-dark">
-                <img
-                    src={image}
-                    alt={name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                {badge && (
-                    <div
-                        className="absolute top-3 left-3 px-3 py-1 text-xs font-heading font-700 tracking-widest uppercase text-primary-foreground"
-                        style={{
-                            background: 'oklch(0.58 0.22 25)',
-                            clipPath: 'polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%)',
-                        }}
-                    >
-                        {badge}
-                    </div>
-                )}
-                {/* Hover Overlay */}
-                <div className="product-overlay">
-                    <button
-                        className="btn-primary text-xs"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <ShoppingBag size={14} />
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            {/* Card Info */}
-            <div className="p-4 border-t border-brand-dark-border">
-                <p className="text-xs font-semibold tracking-widest uppercase text-brand-red mb-1">
-                    {category}
-                </p>
-                <h3 className="font-heading font-700 text-base tracking-wide uppercase text-foreground mb-2 leading-tight">
-                    {name}
-                </h3>
-                <div className="flex items-center justify-between">
-                    <span className="font-heading font-800 text-xl text-foreground">
-                        {price}
-                    </span>
-                    <button
-                        className="w-8 h-8 flex items-center justify-center border border-brand-dark-border hover:border-brand-red hover:text-brand-red transition-colors"
-                        aria-label="Quick add"
-                    >
-                        <ShoppingBag size={14} />
-                    </button>
-                </div>
-            </div>
+export default function ProductCard({ image, category, name, price, badge }: ProductCardProps) {
+  return (
+    <div className="product-card group relative bg-brand-dark-card border border-brand-dark-border rounded-lg overflow-hidden transition-all duration-300 hover:border-brand-red/50 hover:shadow-brand-glow">
+      {badge && (
+        <div className="absolute top-3 left-3 z-10 bg-brand-red text-white text-xs font-bold uppercase tracking-wider px-2 py-1 rounded">
+          {badge}
         </div>
-    );
+      )}
+      <div className="relative overflow-hidden aspect-square bg-brand-dark">
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <button className="cta-primary px-6 py-3 text-sm font-bold uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-brand-gray text-xs font-semibold uppercase tracking-widest mb-1">{category}</p>
+        <h3 className="font-heading text-white font-bold text-lg uppercase leading-tight mb-2">{name}</h3>
+        <p className="text-brand-red font-heading font-black text-xl">{price}</p>
+      </div>
+    </div>
+  );
 }

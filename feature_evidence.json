@@ -2,10 +2,16 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-the-contactsection-component-update-the-displayed-phone-number-to-7006981592-formatted-as-91-70069-81592-or-similar-indian-mobile-format-replace-any-existing-placeholder-phone-number-with-this-real-contact-number",
-      "featureTitle": "In the ContactSection component, update the displayed phone number to '7006981592' (formatted as +91 70069 81592 or similar Indian mobile format). Replace any existing placeholder phone number with this real contact number.",
+      "featureId": "feature-ensure-the-application-is-fully-built-and-deployed-with-all-existing-features-intact-including-the-homepage-hero-section-product-showcase-with-inr-prices-about-section-contact-section-with-real-address-phone-email-sticky-navigation-with-the-jay-sports-logo-image-and-the-bold-athletic-visual-theme",
+      "featureTitle": "Ensure the application is fully built and deployed with all existing features intact, including the homepage hero section, product showcase with INR prices, about section, contact section with real address/phone/email, sticky navigation with the Jay Sports logo image, and the bold athletic visual theme.",
       "files": [
-        "frontend/src/components/ContactSection.tsx"
+        "frontend/index.html",
+        "frontend/src/components/ContactSection.tsx",
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/components/ProductShowcase.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/Home.tsx",
+        "frontend/tailwind.config.js"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,7 +21,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-9"
+        "REQ-13"
       ],
       "confidence": "high"
     }

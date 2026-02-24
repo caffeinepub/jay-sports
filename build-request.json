@@ -1,37 +1,39 @@
 {
   "kind": "build_request",
-  "title": "Add contact phone number to ContactSection",
+  "title": "Deploy Jay Sports website (go live)",
   "projectName": "Jay Sports",
-  "priority": "normal",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-9",
-      "text": "In the ContactSection component, update the displayed phone number to '7006981592' (formatted as +91 70069 81592 or similar Indian mobile format). Replace any existing placeholder phone number with this real contact number.",
-      "target": "frontend",
+      "id": "REQ-13",
+      "text": "Ensure the application is fully built and deployed with all existing features intact, including the homepage hero section, product showcase with INR prices, about section, contact section with real address/phone/email, sticky navigation with the Jay Sports logo image, and the bold athletic visual theme.",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-3"
         ],
         "quotes": [
-          "Add my contact number 7006981592"
+          "Go live"
         ]
       },
       "acceptanceCriteria": [
-        "The ContactSection displays the phone number 7006981592",
-        "The number is formatted in a standard Indian mobile format (e.g., +91 70069 81592)",
-        "The phone number replaces any previously displayed placeholder phone number",
-        "The phone detail entry retains the same visual style as other contact details"
+        "The application deploys successfully without build or deployment errors",
+        "All sections (Hero, Products, About, Contact) are visible and functional on the live deployment",
+        "The Jay Sports logo image is displayed in the navigation bar",
+        "Product prices are shown in Indian Rupees (₹)",
+        "Contact section displays the correct address (196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir), phone (+91 70069 81592), and email (jaysports.in@gmail.com)",
+        "The dark athletic theme with electric red accents is applied consistently across all sections"
       ]
     }
   ],
   "constraints": [
-    "Do not change any other contact details (address, email, form fields)",
-    "Do not modify any files listed in frontend.immutablePaths"
+    "Do not change any existing feature implementations — only ensure the app builds and deploys cleanly",
+    "Do not modify immutable frontend paths (hooks, main.tsx, ui components)"
   ],
   "nonGoals": [
-    "Adding a clickable tel: link unless it fits the existing design pattern",
-    "Changing any other section of the site",
-    "Adding shopping cart or e-commerce functionality"
+    "Adding new features or sections",
+    "Changing existing content, prices, or contact details",
+    "Redesigning any part of the UI"
   ],
   "imageRequirements": {
     "required": [],
