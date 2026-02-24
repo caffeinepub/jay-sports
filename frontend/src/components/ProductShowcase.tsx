@@ -15,9 +15,9 @@ const products = [
     price: "₹999",
   },
   {
-    image: "/assets/generated/product-hoodie.dim_400x400.png",
-    category: "Apparel",
-    name: "Champion Hoodie",
+    image: "/assets/generated/cricket-bat.dim_400x400.png",
+    category: "Cricket",
+    name: "Pro Cricket Bat",
     price: "₹2,499",
     badge: "New",
   },
@@ -25,7 +25,7 @@ const products = [
     image: "/assets/generated/product-shoes.dim_400x400.png",
     category: "Footwear",
     name: "Speed Boost Shoes",
-    price: "₹10,999",
+    price: "₹999",
     badge: "Premium",
   },
   {

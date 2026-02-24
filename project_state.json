@@ -1,114 +1,25 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 15,
-  "summary": "A modern retail website for Jay Sports, a sportswear store. Features a homepage with hero section, product showcase, about section, and contact info with a bold, athletic design.",
-  "architectural_notes": [
-    "Bold, athletic visual design theme suited for a sportswear brand"
-  ],
+  "projectStateVersion": 3,
+  "summary": "Project involves a product/store page featuring a cricket bat image and a price field.",
+  "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- A clean studio-style cricket bat illustration on a transparent or light neutral background (cricket-bat.dim_400x400.png)",
   "existing_features": [
     {
-      "id": "feature-create-a-homepage-with-a-full-width-hero-section-featuring-the-jay-sports-brand-name-a-bold-tagline-and-a-call-to-action-button-e-g-shop-now",
-      "title": "Create a homepage with a full-width hero section featuring the Jay Sports brand name, a bold tagline, and a call-to-action button (e.g., 'Shop Now').",
+      "id": "feature-in-the-productshowcase-component-replace-the-image-of-the-product-card-at-grid-position-3-the-element-identified-by-xpath-html-1-body-1-div-1-div-1-main-1-section-2-div-1-div-2-div-3-div-2-div-1-with-a-generated-cricket-bat-image-asset-cricket-bat-dim-400x400-png-stored-in-frontend-public-assets-generated",
+      "title": "In the ProductShowcase component, replace the image of the product card at grid position 3 (the element identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[3]/div[2]/div[1]) with a generated cricket bat image asset (cricket-bat.dim_400x400.png) stored in frontend/public/assets/generated/.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-create-a-product-showcase-section-on-the-homepage-displaying-a-grid-of-sample-sportswear-product-cards-each-with-a-product-image-placeholder-name-and-price",
-      "title": "Create a product showcase section on the homepage displaying a grid of sample sportswear product cards, each with a product image placeholder, name, and price.",
+      "id": "feature-in-the-productshowcase-component-update-the-price-displayed-in-the-product-card-at-grid-position-4-the-element-identified-by-xpath-html-1-body-1-div-1-div-1-main-1-section-2-div-1-div-2-div-4-div-3-p-2-to-999",
+      "title": "In the ProductShowcase component, update the price displayed in the product card at grid position 4 (the element identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[4]/div[3]/p[2]) to 999.",
       "reqIds": [
         "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-an-about-us-section-describing-jay-sports-as-a-sportswear-store-including-a-short-brand-story-and-mission-statement",
-      "title": "Create an 'About Us' section describing Jay Sports as a sportswear store, including a short brand story and mission statement.",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-a-contact-info-section-at-the-bottom-of-the-homepage-displaying-placeholder-contact-details-address-phone-email-and-a-simple-contact-form-with-name-email-and-message-fields",
-      "title": "Create a contact info section at the bottom of the homepage displaying placeholder contact details (address, phone, email) and a simple contact form with name, email, and message fields.",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-sticky-navigation-bar-at-the-top-with-the-jay-sports-logo-name-and-links-to-each-page-section-home-products-about-and-contact",
-      "title": "Add a sticky navigation bar at the top with the Jay Sports logo/name and links to each page section: Home, Products, About, and Contact.",
-      "reqIds": [
-        "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-apply-a-bold-high-energy-athletic-visual-theme-across-the-entire-site-use-a-dark-background-with-vivid-accent-colors-e-g-electric-red-or-neon-orange-strong-typography-with-heavy-font-weights-sharp-geometric-layouts-and-dynamic-section-dividers-to-evoke-a-premium-sportswear-brand-feel",
-      "title": "Apply a bold, high-energy athletic visual theme across the entire site: use a dark background with vivid accent colors (e.g., electric red or neon orange), strong typography with heavy font weights, sharp geometric layouts, and dynamic section dividers to evoke a premium sportswear brand feel.",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-in-the-contactsection-component-update-the-placeholder-address-to-the-user-s-current-address-based-on-the-selected-elements-xpath-section-4-contact-detail-entries-replace-the-existing-placeholder-address-text-with-a-real-indian-address-since-no-specific-address-was-provided-use-a-realistic-indian-placeholder-address-e-g-12-mg-road-bengaluru-karnataka-560001-india-until-the-user-provides-their-actual-address",
-      "title": "In the ContactSection component, update the placeholder address to the user's current address. Based on the selected elements (XPath: section[4] contact detail entries), replace the existing placeholder address text with: a real Indian address. Since no specific address was provided, use a realistic Indian placeholder address (e.g., '12, MG Road, Bengaluru, Karnataka 560001, India') until the user provides their actual address.",
-      "reqIds": [
-        "REQ-7"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-in-the-productshowcase-and-productcard-components-change-all-product-price-displays-from-usd-to-indian-rupees-update-the-six-product-prices-shown-in-the-product-grid-selected-elements-xpath-section-2-product-card-price-spans-to-use-the-symbol-and-appropriate-inr-price-values-e-g-1-999-2-499-3-299-etc",
-      "title": "In the ProductShowcase and ProductCard components, change all product price displays from USD ($) to Indian Rupees (₹). Update the six product prices shown in the product grid (selected elements XPath: section[2] product card price spans) to use the ₹ symbol and appropriate INR price values (e.g., ₹1,999, ₹2,499, ₹3,299, etc.).",
-      "reqIds": [
-        "REQ-8"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-in-the-contactsection-component-update-the-displayed-phone-number-to-7006981592-formatted-as-91-70069-81592-or-similar-indian-mobile-format-replace-any-existing-placeholder-phone-number-with-this-real-contact-number",
-      "title": "In the ContactSection component, update the displayed phone number to '7006981592' (formatted as +91 70069 81592 or similar Indian mobile format). Replace any existing placeholder phone number with this real contact number.",
-      "reqIds": [
-        "REQ-9"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-in-the-contactsection-component-update-the-displayed-email-address-to-jaysports-in-gmail-com-replace-any-existing-placeholder-email-with-this-real-contact-email-address",
-      "title": "In the ContactSection component, update the displayed email address to 'jaysports.in@gmail.com'. Replace any existing placeholder email with this real contact email address.",
-      "reqIds": [
-        "REQ-10"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-in-the-contactsection-component-update-the-displayed-address-to-196-new-colony-ratnipora-pulwama-192304-jammu-and-kashmir-replace-any-existing-address-text-with-this-new-address",
-      "title": "In the ContactSection component, update the displayed address to '196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir'. Replace any existing address text with this new address.",
-      "reqIds": [
-        "REQ-11"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-save-the-uploaded-jay-sports-logo-image-1771937030584-png-as-a-static-asset-at-frontend-public-assets-generated-jay-sports-logo-png-and-use-it-as-the-logo-image-in-the-navigation-component-replacing-the-current-text-only-or-placeholder-logo-the-logo-should-be-displayed-at-an-appropriate-height-e-g-48px-within-the-sticky-navbar-maintaining-its-aspect-ratio",
-      "title": "Save the uploaded Jay Sports logo image (1771937030584.png) as a static asset at frontend/public/assets/generated/jay-sports-logo.png and use it as the logo image in the Navigation component, replacing the current text-only or placeholder logo. The logo should be displayed at an appropriate height (e.g., 48px) within the sticky navbar, maintaining its aspect ratio.",
-      "reqIds": [
-        "REQ-12"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-ensure-the-application-is-fully-built-and-deployed-with-all-existing-features-intact-including-the-homepage-hero-section-product-showcase-with-inr-prices-about-section-contact-section-with-real-address-phone-email-sticky-navigation-with-the-jay-sports-logo-image-and-the-bold-athletic-visual-theme",
-      "title": "Ensure the application is fully built and deployed with all existing features intact, including the homepage hero section, product showcase with INR prices, about section, contact section with real address/phone/email, sticky navigation with the Jay Sports logo image, and the bold athletic visual theme.",
-      "reqIds": [
-        "REQ-13"
       ],
       "version": 1
     }
@@ -116,61 +27,13 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Homepage with hero section",
+      "summary": "Replace existing image with a cricket bat image",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-2",
-      "summary": "Product showcase section",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "About section",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-4",
-      "summary": "Contact info section",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-6",
-      "summary": "Change product prices to Indian Rupees (₹)",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-7",
-      "summary": "Add contact phone number 7006981592 to the contact section",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-8",
-      "summary": "Add contact form so customers can reach out directly from the website",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-9",
-      "summary": "Add email address jaysports.in@gmail.com to the contact section",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-10",
-      "summary": "Update contact address to: 196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-11",
-      "summary": "Add a custom logo image to the Jay Sports brand/navigation",
+      "summary": "Change the price to 999",
       "reqIds": [],
       "status": "pending"
     }

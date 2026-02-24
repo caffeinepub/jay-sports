@@ -2,16 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-ensure-the-application-is-fully-built-and-deployed-with-all-existing-features-intact-including-the-homepage-hero-section-product-showcase-with-inr-prices-about-section-contact-section-with-real-address-phone-email-sticky-navigation-with-the-jay-sports-logo-image-and-the-bold-athletic-visual-theme",
-      "featureTitle": "Ensure the application is fully built and deployed with all existing features intact, including the homepage hero section, product showcase with INR prices, about section, contact section with real address/phone/email, sticky navigation with the Jay Sports logo image, and the bold athletic visual theme.",
+      "featureId": "feature-in-the-productshowcase-component-replace-the-image-of-the-product-card-at-grid-position-3-the-element-identified-by-xpath-html-1-body-1-div-1-div-1-main-1-section-2-div-1-div-2-div-3-div-2-div-1-with-a-generated-cricket-bat-image-asset-cricket-bat-dim-400x400-png-stored-in-frontend-public-assets-generated",
+      "featureTitle": "In the ProductShowcase component, replace the image of the product card at grid position 3 (the element identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[3]/div[2]/div[1]) with a generated cricket bat image asset (cricket-bat.dim_400x400.png) stored in frontend/public/assets/generated/.",
       "files": [
-        "frontend/index.html",
-        "frontend/src/components/ContactSection.tsx",
-        "frontend/src/components/Navigation.tsx",
-        "frontend/src/components/ProductShowcase.tsx",
-        "frontend/src/index.css",
-        "frontend/src/pages/Home.tsx",
-        "frontend/tailwind.config.js"
+        "frontend/src/components/ProductShowcase.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -21,7 +15,25 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-13"
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-in-the-productshowcase-component-update-the-price-displayed-in-the-product-card-at-grid-position-4-the-element-identified-by-xpath-html-1-body-1-div-1-div-1-main-1-section-2-div-1-div-2-div-4-div-3-p-2-to-999",
+      "featureTitle": "In the ProductShowcase component, update the price displayed in the product card at grid position 4 (the element identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[4]/div[3]/p[2]) to 999.",
+      "files": [
+        "frontend/src/components/ProductShowcase.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
       ],
       "confidence": "high"
     }

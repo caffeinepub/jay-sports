@@ -1,14 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Deploy the Jay Sports website so it is fully live and accessible with all existing features intact.
+**Goal:** Replace the image on product card #3 with a cricket bat image and update the price on product card #4 to 999.
 
 **Planned changes:**
-- Ensure the application builds and deploys successfully without errors
-- Verify all sections (Hero, Products, About, Contact) are functional on the live deployment
-- Confirm the Jay Sports logo is displayed in the navigation bar
-- Confirm product prices are shown in Indian Rupees (₹)
-- Confirm contact details display the correct address (196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir), phone (+91 70069 81592), and email (jaysports.in@gmail.com)
-- Confirm the dark athletic theme with electric red accents is applied consistently
+- Replace the image in product card at grid position 3 with a new cricket bat image (`cricket-bat.dim_400x400.png`)
+- Update the price in product card at grid position 4 to 999 in the hardcoded product data
 
-**User-visible outcome:** The Jay Sports website is live and publicly accessible with all existing features, content, and styling fully functional.
+**User-visible outcome:** The product showcase now displays a cricket bat image on the third product card, and the fourth product card shows a price of 999.

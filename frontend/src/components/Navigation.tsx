@@ -55,16 +55,13 @@ export default function Navigation() {
           <a
             href="#home"
             onClick={(e) => { e.preventDefault(); handleNavClick("#home"); }}
-            className="flex items-center gap-3 group"
+            className="flex items-center group"
           >
             <img
-              src="/assets/generated/jay-sports-logo.dim_256x256.png"
-              alt="Jay Sports Logo"
-              className="h-10 w-10 md:h-12 md:w-12 object-contain"
+              src="/assets/generated/jay-sports-logo.dim_400x400.png"
+              alt="Jay Sports"
+              className="h-12 md:h-14 w-auto object-contain drop-shadow-md"
             />
-            <span className="font-heading text-xl md:text-2xl font-black text-white uppercase tracking-wider group-hover:text-brand-red transition-colors">
-              Jay Sports
-            </span>
           </a>
 
           {/* Desktop Nav */}

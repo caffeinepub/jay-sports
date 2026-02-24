@@ -1,42 +1,60 @@
 {
   "kind": "build_request",
-  "title": "Deploy Jay Sports website (go live)",
+  "title": "Replace product image with cricket bat and update price to 999",
   "projectName": "Jay Sports",
-  "priority": "high",
+  "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-13",
-      "text": "Ensure the application is fully built and deployed with all existing features intact, including the homepage hero section, product showcase with INR prices, about section, contact section with real address/phone/email, sticky navigation with the Jay Sports logo image, and the bold athletic visual theme.",
-      "target": "both",
+      "id": "REQ-1",
+      "text": "In the ProductShowcase component, replace the image of the product card at grid position 3 (the element identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[3]/div[2]/div[1]) with a generated cricket bat image asset (cricket-bat.dim_400x400.png) stored in frontend/public/assets/generated/.",
+      "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-3"
+          "msg-4"
         ],
         "quotes": [
-          "Go live"
+          "Replace this image by a cricket bat"
         ]
       },
       "acceptanceCriteria": [
-        "The application deploys successfully without build or deployment errors",
-        "All sections (Hero, Products, About, Contact) are visible and functional on the live deployment",
-        "The Jay Sports logo image is displayed in the navigation bar",
-        "Product prices are shown in Indian Rupees (₹)",
-        "Contact section displays the correct address (196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir), phone (+91 70069 81592), and email (jaysports.in@gmail.com)",
-        "The dark athletic theme with electric red accents is applied consistently across all sections"
+        "The product card at position 3 displays a cricket bat image instead of the previous image.",
+        "The image renders correctly in the ProductCard component without broken src links.",
+        "The cricket bat image file exists at frontend/public/assets/generated/cricket-bat.dim_400x400.png."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "In the ProductShowcase component, update the price displayed in the product card at grid position 4 (the element identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[4]/div[3]/p[2]) to 999.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Change the price to 999"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The price shown on the targeted product card reads 999 (or ₹999 / $999 consistent with existing formatting).",
+        "No other product card prices are modified.",
+        "The change is reflected in the hardcoded product data within ProductShowcase.tsx."
       ]
     }
   ],
   "constraints": [
-    "Do not change any existing feature implementations — only ensure the app builds and deploys cleanly",
-    "Do not modify immutable frontend paths (hooks, main.tsx, ui components)"
+    "Only the two selected elements (XPath-identified product card image at position 3 and price at position 4) must be changed; all other product cards remain untouched.",
+    "Do not modify any immutable frontend paths."
   ],
   "nonGoals": [
-    "Adding new features or sections",
-    "Changing existing content, prices, or contact details",
-    "Redesigning any part of the UI"
+    "Adding cart or e-commerce functionality.",
+    "Modifying the backend.",
+    "Changing any other product card's image or price.",
+    "Altering navigation, hero section, about section, or contact section."
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "A clean studio-style cricket bat illustration on a transparent or light neutral background (cricket-bat.dim_400x400.png)"
+    ],
     "edits": []
   }
 }
