@@ -1,23 +1,24 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-24T23:47:01.655Z",
-  "summary": "Both REQ-1 and REQ-2 are implemented in ProductShowcase.tsx. The third product card now uses the cricket bat image path and the fourth card's price is set to ₹999. However, the actual image file (cricket-bat.dim_400x400.png) is not present in the diff as an added file, raising a concern about REQ-1's file existence acceptance criterion.",
+  "generatedAt": "2026-02-25T09:40:13.976Z",
+  "summary": "The diff shows that frontend/index.html has been updated with all domain references correctly pointing to 'https://www.jaysports.in' (canonical, og:url, og:image, twitter:url). The Google Analytics config does not reference the old domain. The frontend-file-summaries.txt also confirms these changes. REQ-1 appears to be satisfied for the HTML file. However, the diff does not provide evidence of a scan/update of TSX/TS component files for hardcoded domain strings, and the frontend-file-summaries.txt summary note ambiguously states 'No files were modified — all domain references were already correctly set to https://jaysports.in in the previous version,' which may mean no TS/TSX files contained the old domain or that they were not checked.",
   "missing_requirements": [
     {
       "id": "REQ-1",
-      "requirement": "The cricket bat image file must exist at frontend/public/assets/generated/cricket-bat.dim_400x400.png.",
-      "reason": "The diff shows no added binary or image files. The ADDED FILES section lists 'none', so there is no evidence the actual image asset was created or placed at the required path.",
+      "requirement": "Any hardcoded domain strings in TSX/TS component files are updated to 'www.jaysports.in'.",
+      "reason": "The diff only shows changes to frontend/index.html and metadata files. There is no evidence that TSX/TS component files were scanned or updated for occurrences of 'jay-sports-puc.caffeine.xyz'. The frontend-file-summaries.txt note claims no files were modified because references were already correct, but this cannot be independently verified from the diff alone.",
       "evidence": [
-        "frontend/src/components/ProductShowcase.tsx"
+        "frontend-file-summaries.txt",
+        "frontend/index.html"
       ]
     }
   ],
   "hallucinated_features": [],
-  "confidence": 0.85,
+  "confidence": 0.65,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/ProductShowcase.tsx",
+    "frontend/index.html",
     "project_state.json"
   ]
 }

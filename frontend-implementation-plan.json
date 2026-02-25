@@ -1,37 +1,58 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Replace product image with cricket bat and update price to 999",
+  "title": "Update domain references from jay-sports-puc.caffeine.xyz to www.jaysports.in",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Replace the product card image at grid position 3 with a generated cricket bat image asset",
+      "summary": "Replace all occurrences of 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' across frontend files including HTML meta tags, SEO tags, and any hardcoded URL strings",
       "acceptanceCriteria": [
-        "The product card at position 3 displays a cricket bat image instead of the previous image.",
-        "The image renders correctly in the ProductCard component without broken src links.",
-        "The cricket bat image file exists at frontend/public/assets/generated/cricket-bat.dim_400x400.png."
+        "No occurrence of 'jay-sports-puc.caffeine.xyz' remains in any frontend file.",
+        "All Open Graph og:url and og:image tags in frontend/index.html reference 'https://www.jaysports.in'.",
+        "All Twitter Card and canonical URL tags reference 'https://www.jaysports.in'.",
+        "Google Analytics or any other tracking/config using the old domain is updated to 'www.jaysports.in'.",
+        "Any hardcoded domain strings in TSX/TS component files are updated to 'www.jaysports.in'."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/ProductShowcase.tsx",
+          "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Update the third product object in the hardcoded products array to reference the generated cricket bat image at frontend/public/assets/generated/cricket-bat.dim_400x400.png. Change the image property from its current value to '/assets/generated/cricket-bat.dim_400x400.png'. Ensure the product name and category are updated appropriately to reflect that this is now a cricket bat product."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Update the price displayed in the product card at grid position 4 to 999",
-      "acceptanceCriteria": [
-        "The price shown on the targeted product card reads 999 (or ₹999 / $999 consistent with existing formatting).",
-        "No other product card prices are modified.",
-        "The change is reflected in the hardcoded product data within ProductShowcase.tsx."
-      ],
-      "file_operations": [
+          "description": "Replace all instances of 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' in meta tags including Open Graph og:url and og:image tags, Twitter Card tags, canonical link tag, and any other references to the old domain. Ensure Google Analytics configuration uses the new domain if present."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Search for and replace any hardcoded references to 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' if present in URL strings or configuration."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Search for and replace any hardcoded references to 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' if present in URL strings, links, or text content."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Search for and replace any hardcoded references to 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' if present in routing configuration or URL strings."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Search for and replace any hardcoded references to 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' if present in navigation links or configuration."
+        },
+        {
+          "path": "frontend/src/components/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Search for and replace any hardcoded references to 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' if present in contact information or links."
+        },
+        {
+          "path": "frontend/src/components/AboutSection.tsx",
+          "operation": "modify",
+          "description": "Search for and replace any hardcoded references to 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' if present in content text or links."
+        },
         {
           "path": "frontend/src/components/ProductShowcase.tsx",
           "operation": "modify",
-          "description": "Update the fourth product object in the hardcoded products array to set the price property to 999. Maintain the existing price formatting pattern used in the component (e.g., if prices are displayed with a currency symbol like ₹ or $, ensure consistency)."
+          "description": "Search for and replace any hardcoded references to 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' if present in component configuration or URL strings."
         }
       ]
     }

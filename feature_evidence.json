@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-the-productshowcase-component-replace-the-image-of-the-product-card-at-grid-position-3-the-element-identified-by-xpath-html-1-body-1-div-1-div-1-main-1-section-2-div-1-div-2-div-3-div-2-div-1-with-a-generated-cricket-bat-image-asset-cricket-bat-dim-400x400-png-stored-in-frontend-public-assets-generated",
-      "featureTitle": "In the ProductShowcase component, replace the image of the product card at grid position 3 (the element identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[3]/div[2]/div[1]) with a generated cricket bat image asset (cricket-bat.dim_400x400.png) stored in frontend/public/assets/generated/.",
+      "featureId": "feature-replace-all-occurrences-of-jay-sports-puc-caffeine-xyz-with-www-jaysports-in-across-all-frontend-files-including-html-meta-tags-open-graph-twitter-card-canonical-links-seo-tags-any-hardcoded-url-strings-and-any-other-references-to-the-old-domain",
+      "featureTitle": "Replace all occurrences of 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' across all frontend files, including HTML meta tags (Open Graph, Twitter Card, canonical links), SEO tags, any hardcoded URL strings, and any other references to the old domain.",
       "files": [
-        "frontend/src/components/ProductShowcase.tsx"
+        "frontend/index.html"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -16,24 +16,6 @@
       ],
       "testIds": [
         "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-in-the-productshowcase-component-update-the-price-displayed-in-the-product-card-at-grid-position-4-the-element-identified-by-xpath-html-1-body-1-div-1-div-1-main-1-section-2-div-1-div-2-div-4-div-3-p-2-to-999",
-      "featureTitle": "In the ProductShowcase component, update the price displayed in the product card at grid position 4 (the element identified by XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[2]/div[4]/div[3]/p[2]) to 999.",
-      "files": [
-        "frontend/src/components/ProductShowcase.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
       ],
       "confidence": "high"
     }

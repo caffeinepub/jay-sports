@@ -8,5 +8,6 @@
   "frontend/src/components/AboutSection.tsx": "About Jay Sports section featuring brand story copy, animated stats grid (10+ years, 500+ products, 50K+ athletes, 100% quality), and a 4-column core values grid with icons.",
   "frontend/src/components/ContactSection.tsx": "Contact Us section with address (196 - New Colony Ratnipora, Pulwama, 192304, Jammu and Kashmir), phone (+91 70069 81592), email (jaysports.in@gmail.com), hours, and a validated contact form with success state feedback.",
   "frontend/src/pages/Home.tsx": "Full homepage assembling Navigation, HeroSection (full-viewport hero with background image, headline, CTA buttons, trust indicators), ProductShowcase, AboutSection, ContactSection, and Footer with caffeine.ai attribution.",
-  "frontend/index.html": "HTML shell with Jay Sports page title, SEO meta tags, favicon pointing to the generated logo, Google Analytics 4 tracking tag (G-TFLYGLLZY9), and the root div for React mounting."
+  "frontend/index.html": "HTML shell with Jay Sports page title, SEO meta tags (canonical link, Open Graph, and Twitter Card tags all pointing to https://www.jaysports.in), favicon, Google Analytics 4 tracking, and the root div for React mounting.",
+  "No files were modified — all domain references were already correctly set to https": "//jaysports.in in the previous version."
 }
