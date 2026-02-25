@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-replace-all-occurrences-of-jay-sports-puc-caffeine-xyz-with-www-jaysports-in-across-all-frontend-files-including-html-meta-tags-open-graph-twitter-card-canonical-links-seo-tags-any-hardcoded-url-strings-and-any-other-references-to-the-old-domain",
-      "featureTitle": "Replace all occurrences of 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' across all frontend files, including HTML meta tags (Open Graph, Twitter Card, canonical links), SEO tags, any hardcoded URL strings, and any other references to the old domain.",
+      "featureId": "feature-update-the-frontend-index-html-file-so-that-the-page-title-tag-reads-jaysports-in-or-jay-sports-jaysports-in-and-ensure-all-meta-tags-open-graph-tags-twitter-card-tags-and-canonical-url-consistently-reference-jaysports-in-without-the-www-prefix-where-the-user-has-specified-the-bare-domain",
+      "featureTitle": "Update the frontend/index.html file so that the page <title> tag reads 'jaysports.in' (or 'Jay Sports | jaysports.in') and ensure all meta tags, Open Graph tags, Twitter Card tags, and canonical URL consistently reference 'jaysports.in' (without the 'www.' prefix where the user has specified the bare domain).",
       "files": [
         "frontend/index.html"
       ],

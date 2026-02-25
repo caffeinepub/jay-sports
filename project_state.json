@@ -1,32 +1,23 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Website project for Jay Sports. Updating the site URL from jay-sports-puc.caffeine.xyz to www.jaysports.in.",
-  "architectural_notes": [
-    "Production URL: www.jaysports.in"
-  ],
+  "summary": "Website project for jaysports.in",
+  "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-replace-all-occurrences-of-jay-sports-puc-caffeine-xyz-with-www-jaysports-in-across-all-frontend-files-including-html-meta-tags-open-graph-twitter-card-canonical-links-seo-tags-any-hardcoded-url-strings-and-any-other-references-to-the-old-domain",
-      "title": "Replace all occurrences of 'jay-sports-puc.caffeine.xyz' with 'www.jaysports.in' across all frontend files, including HTML meta tags (Open Graph, Twitter Card, canonical links), SEO tags, any hardcoded URL strings, and any other references to the old domain.",
+      "id": "feature-update-the-frontend-index-html-file-so-that-the-page-title-tag-reads-jaysports-in-or-jay-sports-jaysports-in-and-ensure-all-meta-tags-open-graph-tags-twitter-card-tags-and-canonical-url-consistently-reference-jaysports-in-without-the-www-prefix-where-the-user-has-specified-the-bare-domain",
+      "title": "Update the frontend/index.html file so that the page <title> tag reads 'jaysports.in' (or 'Jay Sports | jaysports.in') and ensure all meta tags, Open Graph tags, Twitter Card tags, and canonical URL consistently reference 'jaysports.in' (without the 'www.' prefix where the user has specified the bare domain).",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     }
   ],
-  "new_feature_requests": [
-    {
-      "id": "AR-1",
-      "summary": "Change website URL from jay-sports-puc.caffeine.xyz to www.jaysports.in",
-      "reqIds": [],
-      "status": "pending"
-    }
-  ],
+  "new_feature_requests": [],
   "gameProjectType": "none",
-  "projectName": "Jay Sports",
+  "projectName": "jaysports.in",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

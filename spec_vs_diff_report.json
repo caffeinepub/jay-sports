@@ -1,21 +1,19 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-25T09:40:13.976Z",
-  "summary": "The diff shows that frontend/index.html has been updated with all domain references correctly pointing to 'https://www.jaysports.in' (canonical, og:url, og:image, twitter:url). The Google Analytics config does not reference the old domain. The frontend-file-summaries.txt also confirms these changes. REQ-1 appears to be satisfied for the HTML file. However, the diff does not provide evidence of a scan/update of TSX/TS component files for hardcoded domain strings, and the frontend-file-summaries.txt summary note ambiguously states 'No files were modified — all domain references were already correctly set to https://jaysports.in in the previous version,' which may mean no TS/TSX files contained the old domain or that they were not checked.",
-  "missing_requirements": [
+  "generatedAt": "2026-02-25T09:45:18.223Z",
+  "summary": "The diff shows that frontend/index.html has been updated with all required metadata changes: the <title> reads 'Jay Sports | jaysports.in', the canonical URL references https://jaysports.in, Open Graph tags (og:url, og:site_name, og:title) reference jaysports.in, and Twitter Card tags (twitter:url, twitter:site, twitter:title) reference jaysports.in. All acceptance criteria for REQ-1 appear to be satisfied. The Google Analytics 4 snippet is present but was not explicitly requested.",
+  "missing_requirements": [],
+  "hallucinated_features": [
     {
-      "id": "REQ-1",
-      "requirement": "Any hardcoded domain strings in TSX/TS component files are updated to 'www.jaysports.in'.",
-      "reason": "The diff only shows changes to frontend/index.html and metadata files. There is no evidence that TSX/TS component files were scanned or updated for occurrences of 'jay-sports-puc.caffeine.xyz'. The frontend-file-summaries.txt note claims no files were modified because references were already correct, but this cannot be independently verified from the diff alone.",
+      "description": "Google Analytics 4 tracking script (G-TFLYGLLZY9) added to index.html",
+      "reason": "The build request only asked for updating title, meta tags, Open Graph tags, Twitter Card tags, and canonical URL to reference jaysports.in. The addition of a GA4 tracking script was not part of any stated requirement.",
       "evidence": [
-        "frontend-file-summaries.txt",
         "frontend/index.html"
       ]
     }
   ],
-  "hallucinated_features": [],
-  "confidence": 0.65,
+  "confidence": 0.92,
   "changed_files": [
     "frontend-file-summaries.txt",
     "frontend/index.html",
